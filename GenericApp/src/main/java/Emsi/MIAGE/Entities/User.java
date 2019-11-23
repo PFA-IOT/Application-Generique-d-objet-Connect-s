@@ -55,6 +55,7 @@ public class User implements UserDetails  {
 	@JsonIgnore
 	private Set<UserRole> userRoles=new HashSet<>();
 	
+	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		Set<GrantedAuthority>authorities=new HashSet<>();
