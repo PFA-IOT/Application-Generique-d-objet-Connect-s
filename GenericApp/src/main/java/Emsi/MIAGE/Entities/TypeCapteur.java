@@ -20,7 +20,7 @@ import lombok.ToString;
 @ToString
 public class TypeCapteur {
 	@Id
-   private int typeCapteur;
+   private Long typeCapteur;
    private String libelle;
 
 }
