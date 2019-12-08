@@ -1,4 +1,4 @@
-package com.example.emsi_notif_sujet4;
+package com.example.emsi_notif_sujet4.Models;
 
 public class Etudiant extends Personne {
     private String matricule;

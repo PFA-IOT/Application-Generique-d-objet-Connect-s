@@ -16,8 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="37dp"
-            android:layout_marginLeft="30dp">
+            android:layout_marginLeft="3dp">
             <ImageView
                 android:id="@+id/sback"
                 android:layout_width="wrap_content"
@@ -32,7 +31,7 @@
             android:layout_height="120dp"
             android:background="@drawable/logo"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="110dp"
+            android:layout_marginTop="1dp"
             />
         <LinearLayout
             android:layout_width="match_parent"
@@ -122,6 +121,96 @@
                 android:layout_marginBottom="10dp"
                 android:background="#ADCCE2"/>
             <androidx.appcompat.widget.AppCompatEditText
+                android:textSize="16dp"
+                android:id="@+id/age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Age..."
+                android:drawableRight="@android:drawable/ic_menu_week"
+                android:textColorHint="#ADCCE2"
+                android:layout_marginLeft="22dp"
+                android:inputType="text"
+                android:maxLength="12"
+                android:textColor="#ADCCE2"
+                android:background="#0000"
+                android:padding="16dp"
+                android:layout_marginRight="35dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_height="1dp"
+                android:layout_marginBottom="10dp"
+                android:background="#ADCCE2"/>
+            <androidx.appcompat.widget.AppCompatEditText
+            android:textSize="16dp"
+            android:id="@+id/nivEtudiant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="niveau..."
+            android:drawableRight="@drawable/user"
+            android:textColorHint="#ADCCE2"
+            android:layout_marginLeft="22dp"
+            android:inputType="text"
+            android:maxLength="12"
+            android:textColor="#ADCCE2"
+            android:background="#0000"
+            android:padding="16dp"
+            android:layout_marginRight="35dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_height="1dp"
+                android:layout_marginBottom="10dp"
+                android:background="#ADCCE2"/>
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:textSize="16dp"
+                android:id="@+id/spinner1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/filiere_arrays"
+                android:prompt="@string/filiere_prompt"
+                android:drawableRight="@android:drawable/ic_input_get"
+                android:textColorHint="#0000"
+                android:layout_marginLeft="22dp"
+                android:inputType="text"
+                android:maxLength="12"
+                android:textColor="@color/colorPrimary"
+                android:background="#0000"
+                android:padding="16dp"
+                android:layout_marginRight="35dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_height="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="#F9F9F9"/>
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:textSize="16dp"
+                android:id="@+id/spinner2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/departement_arrays"
+                android:prompt="@string/departement_prompt"
+                android:drawableRight="@android:drawable/ic_input_get"
+                android:textColorHint="#0000"
+                android:layout_marginLeft="22dp"
+                android:inputType="text"
+                android:maxLength="12"
+                android:textColor="@android:color/white"
+                android:background="#0000"
+                android:padding="16dp"
+                android:layout_marginRight="35dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_height="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="#F9F9F9"/>
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/sin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -134,7 +223,7 @@
                 android:layout_marginRight="40dp"
                 android:padding="16dp"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="28dp"
+                android:layout_marginBottom="2dp"
                 android:layout_marginTop="32dp"
                 />
         </LinearLayout>

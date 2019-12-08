@@ -1,4 +1,6 @@
-package com.example.emsi_notif_sujet4;
+package com.example.emsi_notif_sujet4.Models;
+
+import com.example.emsi_notif_sujet4.Models.Personne;
 
 public class Surveillant extends Personne {
     private String professionExact;
