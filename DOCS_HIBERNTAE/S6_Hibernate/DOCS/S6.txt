@@ -1,0 +1,6 @@
+1- SHOW SQL
+2- TEST LAZY-EAGER
+3-LOAD - GET
+4- Level Cache 1
+5- Level Cache 2
+6- Query Cache
