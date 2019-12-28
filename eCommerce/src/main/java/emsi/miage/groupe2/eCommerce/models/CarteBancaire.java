@@ -4,7 +4,16 @@ package emsi.miage.groupe2.eCommerce.models; /**********************************
  * Purpose: Defines the Class CarteBancaire
  ***********************************************************************/
 
-import java.util.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 /** @pdOid 09345858-e6e2-470a-a9fb-8a3fcce29693 */
 @Entity

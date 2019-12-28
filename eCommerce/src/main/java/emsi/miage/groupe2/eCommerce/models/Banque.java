@@ -4,9 +4,17 @@ package emsi.miage.groupe2.eCommerce.models; /**********************************
  * Purpose: Defines the Class Banque
  ***********************************************************************/
 
-import java.util.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
-/** @pdOid c2e630e5-528f-424c-8047-7c1dba8599f2 */
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 @Entity
 @Data
 @NoArgsConstructor @AllArgsConstructor @ToString
@@ -17,6 +25,6 @@ public class Banque {
    /** @pdOid 891f9b02-553b-4361-8476-1cb23eb2df65 */
    private double solde;
    @OneToOne
-   private CartBancaire cartbancaire;
+   private CarteBancaire cartbancaire;
 
 }

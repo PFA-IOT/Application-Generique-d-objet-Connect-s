@@ -4,7 +4,18 @@ package emsi.miage.groupe2.eCommerce.models; /**********************************
  * Purpose: Defines the Class Fiche
  ***********************************************************************/
 
-import java.util.*;
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 /** @pdOid fe1e29da-23cd-4bd5-89d0-1f984909dcb1 */
 @Entity

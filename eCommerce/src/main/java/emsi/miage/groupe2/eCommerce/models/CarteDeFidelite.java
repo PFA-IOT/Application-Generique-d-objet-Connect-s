@@ -4,7 +4,16 @@ package emsi.miage.groupe2.eCommerce.models; /**********************************
  * Purpose: Defines the Class CarteDeFidelite
  ***********************************************************************/
 
-import java.util.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 /** @pdOid 3f3bffee-0cae-4e50-bf80-0632a1f2fa06 */
 @Entity

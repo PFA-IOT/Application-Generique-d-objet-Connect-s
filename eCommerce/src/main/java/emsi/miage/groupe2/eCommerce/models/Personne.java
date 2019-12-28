@@ -4,7 +4,24 @@ package emsi.miage.groupe2.eCommerce.models; /**********************************
  * Purpose: Defines the Class Personne
  ***********************************************************************/
 
-import java.util.*;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+import org.springframework.context.support.BeanDefinitionDsl.Role;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 /** @pdOid 7c600bca-788d-4f34-b5ec-42bc3a6b43cc */
 @Entity
