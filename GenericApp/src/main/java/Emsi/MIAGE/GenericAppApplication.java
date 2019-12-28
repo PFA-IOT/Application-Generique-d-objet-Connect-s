@@ -1,5 +1,8 @@
 package Emsi.MIAGE;
 
+import java.util.Scanner;
+
+import org.eclipse.paho.client.mqttv3.MqttException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -19,6 +22,8 @@ import Emsi.MIAGE.Entities.Information;
 import Emsi.MIAGE.Entities.Objet;
 import Emsi.MIAGE.Entities.TypeCapteur;
 import Emsi.MIAGE.Entities.Zone;
+import Emsi.MIAGE.mqtt.Publisher;
+import Emsi.MIAGE.mqtt.Subsciber;
 
 @SpringBootApplication
 public class GenericAppApplication implements CommandLineRunner {
@@ -66,7 +71,7 @@ public class GenericAppApplication implements CommandLineRunner {
 		
 		
 		//test Information
-		informationRepository.save(new Information(1L,"465vr4ve4564v15484ve56",25,4,5,6,9,9,4));
+		informationRepository.save(new Information(1L,"3214hnonbtr36ebtr85brn10nbreb",25,4,5,6,9,9,4));
 		informationRepository.save(new Information(2L,"465vr4v79cdvsgv564v15484ve56",25,4,5,6,9,9,4));
 		
 		
@@ -78,8 +83,28 @@ public class GenericAppApplication implements CommandLineRunner {
 		//test Zone
 		zoneRepository.save(new Zone(1L,"RABAT"));
 		zoneRepository.save(new Zone(1L,"CASABLANCA"));
-
+		try {
+			Scanner sc=new Scanner(System.in);
+			System.out.print("Entrer Le Nom Du Destinataire  : ");
+			String destinataire=sc.nextLine();
+			Subsciber.SubscriberMqtt(destinataire);
+			System.out.println();
+			System.out.println();
+			informationRepository.findAll().forEach(info->{ 
+				
+				try {
+					Publisher.PublisherMqtt(destinataire,info.getEntireFrame());
+				} catch (MqttException e) {
+					System.out.println("Erreur au Niveau du publisher");
+					e.printStackTrace();
+				}
+			});  
+		} catch (MqttException e) {
+			System.out.println("erreur Au Niveau du  Subscriber ...");
+			e.printStackTrace();
+		}
 		
+			
 
 		
 
