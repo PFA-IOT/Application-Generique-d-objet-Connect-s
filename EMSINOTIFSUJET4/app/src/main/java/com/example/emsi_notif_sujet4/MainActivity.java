@@ -7,7 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.emsi_notif_sujet4.Dao.DatabaseHelper;
+
 public class MainActivity extends AppCompatActivity {
+    DatabaseHelper myDb;
     private TextView joinText,signInText;
 
     @Override
@@ -16,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        myDb=new DatabaseHelper(this);
 
         joinText=(TextView) findViewById(R.id.account);
         signInText=(TextView) findViewById(R.id.sin);

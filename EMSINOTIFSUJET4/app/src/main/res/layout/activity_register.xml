@@ -18,7 +18,7 @@
             android:orientation="horizontal"
             android:layout_marginLeft="3dp">
             <ImageView
-                android:id="@+id/sback"
+                android:id="@+id/precRegister"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/left"
@@ -26,21 +26,40 @@
                 android:layout_gravity="center"
                 />
         </LinearLayout>
-        <ImageView
-            android:layout_width="90dp"
-            android:layout_height="120dp"
-            android:background="@drawable/logo"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="1dp"
-            />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_alignParentBottom="true">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:textSize="16dp"
+                android:id="@+id/spinnertypePersoRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/personnes_arrays"
+                android:prompt="@string/type_perso"
+                android:drawableRight="@android:drawable/ic_input_get"
+                android:textColorHint="#0000"
+                android:layout_marginLeft="22dp"
+                android:inputType="text"
+                android:maxLength="12"
+                android:textColor="@color/colorPrimary"
+                android:background="#0000"
+                android:padding="16dp"
+                android:layout_marginRight="35dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_height="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="#F9F9F9"/>
+
             <androidx.appcompat.widget.AppCompatEditText
                 android:textSize="16dp"
-                android:id="@+id/fname"
+                android:id="@+id/fullnameRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Fullname"
@@ -60,7 +79,7 @@
                 android:background="#ADCCE2" />
             <androidx.appcompat.widget.AppCompatEditText
                 android:textSize="16dp"
-                android:id="@+id/mail"
+                android:id="@+id/mailRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email"
@@ -80,7 +99,7 @@
                 android:background="#ADCCE2" />
             <androidx.appcompat.widget.AppCompatEditText
                 android:textSize="16dp"
-                android:id="@+id/usrusr"
+                android:id="@+id/usernameRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Username"
@@ -100,7 +119,7 @@
                 android:background="#ADCCE2" />
             <androidx.appcompat.widget.AppCompatEditText
                 android:textSize="16dp"
-                android:id="@+id/pswrd"
+                android:id="@+id/passwordRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
@@ -122,14 +141,14 @@
                 android:background="#ADCCE2"/>
             <androidx.appcompat.widget.AppCompatEditText
                 android:textSize="16dp"
-                android:id="@+id/age"
+                android:id="@+id/ageRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Age..."
                 android:drawableRight="@android:drawable/ic_menu_week"
                 android:textColorHint="#ADCCE2"
                 android:layout_marginLeft="22dp"
-                android:inputType="text"
+                android:inputType="number"
                 android:maxLength="12"
                 android:textColor="#ADCCE2"
                 android:background="#0000"
@@ -142,31 +161,32 @@
                 android:layout_height="1dp"
                 android:layout_marginBottom="10dp"
                 android:background="#ADCCE2"/>
-            <androidx.appcompat.widget.AppCompatEditText
-            android:textSize="16dp"
-            android:id="@+id/nivEtudiant"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="niveau..."
-            android:drawableRight="@drawable/user"
-            android:textColorHint="#ADCCE2"
-            android:layout_marginLeft="22dp"
-            android:inputType="text"
-            android:maxLength="12"
-            android:textColor="#ADCCE2"
-            android:background="#0000"
-            android:padding="16dp"
-            android:layout_marginRight="35dp"/>
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:textSize="16dp"
+                android:id="@+id/niveauRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/level"
+                android:prompt="@string/niveau"
+                android:drawableRight="@android:drawable/ic_input_get"
+                android:textColorHint="#0000"
+                android:layout_marginLeft="22dp"
+                android:inputType="text"
+                android:maxLength="12"
+                android:textColor="@color/colorPrimary"
+                android:background="#0000"
+                android:padding="16dp"
+                android:layout_marginRight="35dp"/>
             <View
                 android:layout_width="match_parent"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_height="1dp"
-                android:layout_marginBottom="10dp"
-                android:background="#ADCCE2"/>
+                android:layout_marginBottom="1dp"
+                android:background="#F9F9F9"/>
             <androidx.appcompat.widget.AppCompatSpinner
                 android:textSize="16dp"
-                android:id="@+id/spinner1"
+                android:id="@+id/filiereRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:entries="@array/filiere_arrays"
@@ -189,7 +209,7 @@
                 android:background="#F9F9F9"/>
             <androidx.appcompat.widget.AppCompatSpinner
                 android:textSize="16dp"
-                android:id="@+id/spinner2"
+                android:id="@+id/departementRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:entries="@array/departement_arrays"
@@ -210,8 +230,31 @@
                 android:layout_height="1dp"
                 android:layout_marginBottom="1dp"
                 android:background="#F9F9F9"/>
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:textSize="16dp"
+                android:id="@+id/groupeRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/groupes_arrays"
+                android:prompt="@string/groupes_prompt"
+                android:drawableRight="@android:drawable/ic_input_get"
+                android:textColorHint="#0000"
+                android:layout_marginLeft="22dp"
+                android:inputType="text"
+                android:maxLength="12"
+                android:textColor="@android:color/white"
+                android:background="#0000"
+                android:padding="16dp"
+                android:layout_marginRight="35dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_height="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="#F9F9F9"/>
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/sin"
+                android:id="@+id/createRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/angle"

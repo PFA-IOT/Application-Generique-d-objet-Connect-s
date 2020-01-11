@@ -7,10 +7,61 @@ public class Personne {
     private String email;
     private String fullname;
     private int age;
+    private String filiere;
+    private String niveau;
+    private String groupe;
+    private String departement;
+    private String typePersonne;
 
-    public Personne()
-    {
-        super();
+
+    public Personne() { }
+
+    public Personne(String username, String password, String email, String fullname, int age, String filiere, String niveau, String groupe, String departement, String typePersonne) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.fullname = fullname;
+        this.age = age;
+        this.filiere = filiere;
+        this.niveau = niveau;
+        this.groupe = groupe;
+        this.departement = departement;
+        this.typePersonne = typePersonne;
+    }
+
+    public Personne(Long id, String username, String password, String email, String fullname, int age, String filiere, String niveau, String groupe, String departement, String typePersonne) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.fullname = fullname;
+        this.age = age;
+        this.filiere = filiere;
+        this.niveau = niveau;
+        this.groupe = groupe;
+        this.departement = departement;
+        this.typePersonne = typePersonne;
+    }
+
+    public Personne(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    public String getTypePersonne() {
+        return typePersonne;
+    }
+
+    public void setTypePersonne(String typePersonne) {
+        this.typePersonne = typePersonne;
+    }
+
+    public String getDepartement() {
+        return departement;
+    }
+
+    public void setDepartement(String departement) {
+        this.departement = departement;
     }
 
     public Long getId() {
@@ -61,32 +112,27 @@ public class Personne {
         this.age = age;
     }
 
-    public Personne(Long id, String username, String password, String email, String fullname, int age) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.email = email;
-        this.fullname = fullname;
-        this.age = age;
+    public String getFiliere() {
+        return filiere;
     }
 
-    public Personne(String username, String password, String email, String fullname, int age) {
-        this.username = username;
-        this.password = password;
-        this.email = email;
-        this.fullname = fullname;
-        this.age = age;
+    public void setFiliere(String filiere) {
+        this.filiere = filiere;
     }
 
-    @Override
-    public String toString() {
-        return "Personne{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", fullname='" + fullname + '\'' +
-                ", age=" + age +
-                '}';
+    public String getNiveau() {
+        return niveau;
+    }
+
+    public void setNiveau(String niveau) {
+        this.niveau = niveau;
+    }
+
+    public String getGroupe() {
+        return groupe;
+    }
+
+    public void setGroupe(String groupe) {
+        this.groupe = groupe;
     }
 }
