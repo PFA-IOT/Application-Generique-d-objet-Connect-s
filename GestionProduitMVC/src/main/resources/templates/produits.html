@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+	layout:decorate="Template">
+<head>
+<meta charset="UTF-8">
+<title>Produits</title>
+
+</head>
+<body>
+	<div layout:fragment="content">
+<div sec:authorize="hasRole('ROLE_ADMIN')"> 
+<div class="col-md-6 col-md-offset-6">
+<h1 style="color: white"> <em>Admin</em></h1>
+</div>
+ </div>
+		<div class="container">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h1>
+						<em>Liste Des Produits</em>
+					</h1>
+				</div>
+				<div class="panel-body">
+
+					<form th:action="@{/user/index}" method="get">
+						<table>
+							<tr>
+								<td><label>Mot Clé</label></td>
+							</tr>
+							<tr>
+								<td><input type="text" class="form-control" name="motcle"
+									th:value="${motcle}" /></td>
+								<td>&nbsp</td>
+								<td>
+									<button type="submit" class="btn btn-primary">Search</button>
+								</td>
+							</tr>
+						</table>
+
+					</form>
+
+				</div>
+				<div class="panel-body">
+
+					<table class="table table-hover">
+						<tr>
+							<th>Designation</th>
+							<th>Price</th>
+							<th>quantité</th>
+							<th>operation 1</th>
+							<th>operation 2</th>
+							
+						</tr>
+						<tr th:each="p:${listProduits}">
+
+							<td th:text="${p.designation}">
+							<td th:text="${p.prix}">
+							<td th:text="${p.quantite}">
+								<td><a onclick="return confirm('Are you sure ? ')"
+									th:href="@{/admin/Delete(id=${p.id},page=${CurentPage},motcle=${motcle})}">Delete</a></td>
+									
+									<td><a th:href="@{/admin/update(id=${p.id})}">Update</a></td>
+							
+								
+								
+						</tr>
+
+					</table>
+					<div class="nav nav-pils">
+						<ul class="pagination">
+							<li th:class="${CurentPage==status.index}?'active':''"
+								th:each="page,status:${pages}"><a
+								th:href="@{/user/index(page=${status.index},motcle=${motcle})}"
+								th:text="${status.index}"> </a> <!-- ici pour faire la pagination on procede par href en donnant l index de la page et on verifie par le currentPage pour activer la class active   -->
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+
+</body>
+</html>

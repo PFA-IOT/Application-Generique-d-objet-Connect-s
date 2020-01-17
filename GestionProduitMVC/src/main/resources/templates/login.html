@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Authentification</title>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+   <link rel="stylesheet"  type="text/css" href="..static/css/myStyle.css" th:href="@{/css/myStyle.css}">
+</head>
+<body>
+<div class="col-md-4 col-md-offset-4" style="margin-top: 50px">
+<div class="panel panel-primary">
+<div class="panel-heading"><span>Authentification </span></div>
+<div class="panel-body">
+
+<div th:if="${param.logout}" style="color: green">
+
+<div class="alert alert-success">
+  <strong>Deconnexion !</strong>.
+</div>
+</div>
+<form th:action="@{/login}" method="post">
+
+	<div>
+		<label>UserName:</label>
+		<input class="form-control" id="usr" type="text" name="username" placeholder="username..."/>
+	</div>
+	<div>
+		<label>Password:</label> 
+		<input class="form-control" id="pass" type="password" name="password" placeholder="password..."/>
+	</div>
+	<br>
+	<div th:if="${param.error}" style="color: red">
+		<div class="alert alert-danger">
+  		<strong>Attention!</strong>Compte ou mot de passe Incorrect.
+		</div>	
+</div>
+	<br>
+	<div>
+	<button  class="btn btn-success" type="submit">Login</button>
+	</div>
+
+</form>
+</div>
+</div>
+
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns: th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<title>Template</title>
+<link rel="stylesheet" href="../static/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+	<link rel="stylesheet" href="../static/css/myStyle.css"
+	th:href="@{/css/myStyle.css}">
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand"  th:href="@{/}"><i class="fas fa-money-check-alt" style="color: white"></i> صرف</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li ><a th:href="@{/user/index}"> <i class="fas fa-home"></i> Home</a></li>
+      <li><a th:href="@{/admin/formProduit}"><i class="fas fa-plus-circle"></i> add Product</a></li>
+      <li><a href="#">Categories</a></li>
+      <li><a href="#">Catalogues</a></li>
+      
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a th:href="@{/login?logout}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+<section layout:fragment="content"></section>
+<footer></footer>
+
+</body>
+</html>
